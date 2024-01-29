@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>Assignment 5</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            background-color: #ff00dd;
+            height: 100vh;
+        }
+
+        .accordion {
+            
+            grid-area: 3/3/3/3;
+        }
+
+        .accordion .content {
+            display: none;
+            padding: 10px;
+            border: 4px solid #ffffff;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .accordion .content.active {
+            background-color: black;
+            color: white;
+            display: block;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .accordion .header {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #00ff55;
+            border: 4px solid #ffffff;
+            border-bottom: none;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+      
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="accordion">
+            <div class="header">D:</div>
+            <div class="content">hello</div>
+            <div class="header">(:<</div>
+            <div class="content">hi</div>
+            <div class="header">:)</div>
+            <div class="content">lol</div>
+        </div>
+
+        <script>
+            document.querySelectorAll('.accordion .header').forEach(function(header){
+                header.addEventListener('click',function(){
+                    header.classList.toggle('active')
+                    header.nextElementSibling.classList.toggle('active')
+                    });
+                });
+
+           
+        </script>
+
+</body>
+
+</html>
